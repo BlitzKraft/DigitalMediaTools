@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'bootstrap3',
     'dmt_sponsors',
+    'dmt_content',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
