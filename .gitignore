@@ -2,3 +2,4 @@
 .idea/
 dmt/
 __pycache__/
+migrations/
