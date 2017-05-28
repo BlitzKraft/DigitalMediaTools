@@ -1,0 +1,1 @@
+default_app_config = 'dmt_sponsors.apps.DmtSponsorsConfig'
