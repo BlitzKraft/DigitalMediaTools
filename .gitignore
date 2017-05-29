@@ -3,4 +3,4 @@
 dmt/
 __pycache__/
 env/*
-*.pyc
+*.pyc*.zip
