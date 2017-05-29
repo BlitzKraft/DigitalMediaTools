@@ -2,3 +2,5 @@
 .idea/
 dmt/
 __pycache__/
+env/*
+*.pyc
