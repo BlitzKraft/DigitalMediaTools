@@ -1,23 +1,24 @@
 from django.db import models
+from dmtools.custom_vars import SITES_ROOT, ZIP_PATH
 from dmt_sponsors.models import Sponsor
 import glob
 
 
 sponsor_list = ()
-status_choices=((str(1), 'Active'), (str(0), 'Inactive'))
-hasMovie_choices=((str(1), 'Yes'), (str(0), 'No'))
+status_choices = ((str(1), 'Active'), (str(0), 'Inactive'))
+hasMovie_choices = ((str(1), 'Yes'), (str(0), 'No'))
 zip_choices = ()
-#CONTENT_PATH = "media/zips/"
+CONTENT_PATH = ZIP_PATH
 
 
 class Content(models.Model):
 
-    """zips = glob.glob(CONTENT_PATH + '*.zip')
+    zips = glob.glob(ZIP_PATH + '*.zip')
     for z in zips:
         z2 = z.split('/')[-1]
         tmp = tuple([(str(z2), str(z2))])
         zip_choices = zip_choices + tmp
-    """
+
     test = list(Sponsor.objects.filter(dmt_status='1'))
     for item in test:
         tmp = tuple([(str(int(item)), str(item))])
@@ -55,9 +56,9 @@ class Content(models.Model):
     )
     content_zip_file = models.CharField(
         max_length=250,
-        choices=zip_choices,
         blank='-',
         verbose_name='Content',
+        choices=zip_choices,
     )
 
     content_used = models.CharField(
